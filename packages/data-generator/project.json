@@ -1,0 +1,17 @@
+{
+  "name": "data-generator",
+  "sourceRoot": "packages/data-generator",
+  "projectType": "library",
+  "targets": {
+    "scrap-web": {
+      "executor": "nx:run-commands",
+      "options": {
+        "parallel": false,
+        "cwd": "packages/data-generator",
+        "color": true,
+        "commands": ["node index.js"]
+      }
+    }
+  },
+  "tags": ["data-generator"]
+}

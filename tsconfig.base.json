@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "checkJs": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@osw/inspect-file": ["packages/inspect-file/src/index.ts"],
+      "@osw/is-audio": ["packages/is-audio/src/index.ts"],
+      "@osw/is-image": ["packages/is-image/src/index.ts"],
+      "@osw/is-video": ["packages/is-video/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

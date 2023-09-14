@@ -1,0 +1,17 @@
+{
+  "name": "web-scrapper",
+  "sourceRoot": "packages/web-scrapper",
+  "projectType": "library",
+  "targets": {
+    "scrap-web": {
+      "executor": "nx:run-commands",
+      "options": {
+        "parallel": false,
+        "cwd": "packages/web-scrapper",
+        "color": true,
+        "commands": ["node index.js"]
+      }
+    }
+  },
+  "tags": ["web-scrapper"]
+}

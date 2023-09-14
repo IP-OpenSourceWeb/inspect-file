@@ -1,0 +1,47 @@
+{
+  "name": "inspect-file",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/inspect-file/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/inspect-file",
+        "main": "packages/inspect-file/src/index.ts",
+        "tsConfig": "packages/inspect-file/tsconfig.lib.json",
+        "assets": ["packages/inspect-file/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs packages/inspect-file {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/inspect-file/**/*.ts",
+          "packages/inspect-file/package.json"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/inspect-file/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": ["inspect-file"]
+}
