@@ -21,10 +21,10 @@
     "strict": true,
 
     "paths": {
-      "@osw/inspect-file": ["packages/inspect-file/src/index.ts"],
-      "@osw/is-audio": ["packages/is-audio/src/index.ts"],
-      "@osw/is-image": ["packages/is-image/src/index.ts"],
-      "@osw/is-video": ["packages/is-video/src/index.ts"]
+      "@oswp/inspect-file": ["packages/inspect-file/src/index.ts"],
+      "@oswp/is-audio": ["packages/is-audio/src/index.ts"],
+      "@oswp/is-image": ["packages/is-image/src/index.ts"],
+      "@oswp/is-video": ["packages/is-video/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
