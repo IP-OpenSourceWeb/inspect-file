@@ -1,3 +1,4 @@
+import { writeFileSync } from 'fs';
 import { scrappingUrls } from './constants.js';
 import { fetchTableData } from './src/fetch.js';
 
@@ -18,7 +19,8 @@ export async function getVideoFormats() {
   dataObj.extensions = dataObj.extensions.map((x) => x.split(' ').filter((x) => x.startsWith('.')));
   console.log({ ...dataObj });
 
-  // fs.writeFileSync()
+  const extensionsSet = [...new Set(dataObj.extensions.flat().filter((x) => x.startsWith('.')))];
+  writeFileSync('./cache/extensions.js', `export const videoExtensions = ${JSON.stringify(extensionsSet)};`);
 }
 
 /**

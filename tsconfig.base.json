@@ -15,7 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "checkJs": true,
+    "allowJs": true,
     "esModuleInterop": true,
+    "alwaysStrict": true,
+    "strict": true,
+
     "paths": {
       "@osw/inspect-file": ["packages/inspect-file/src/index.ts"],
       "@osw/is-audio": ["packages/is-audio/src/index.ts"],
